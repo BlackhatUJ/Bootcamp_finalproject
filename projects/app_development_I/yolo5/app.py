@@ -1,5 +1,5 @@
 from pathlib import Path
-#from flask import Flask, render_template, flash, request, redirect
+from flask import Flask, render_template, flash, request, redirect
 import os
 from werkzeug.utils import secure_filename
 from detect import run
@@ -9,7 +9,14 @@ from loguru import logger
 import boto3
 import logging
 from botocore.exceptions import ClientError
+import json
 
+s3_client = boto3.client("s3")
+
+with open('config.json') as f:
+
+    config = json.load(f)
+bucket_name = config['img_bucket']
 
 
 with open("data/coco128.yaml", "r") as stream:
@@ -63,7 +70,9 @@ def upload_file_api():
 
         # TODO upload client original img (p) and predicted img (pred_result_img) to S3 using boto3
         #  reference: https://boto3.amazonaws.com/v1/documentation/api/latest/guide/s3-uploading-files.html
-    
+        s3_client.upload_file(str(p),bucket_name,str(p))
+        s3_client.upload_file(str(pred_result_img),bucket_name,str(pred_result_image))
+
 
         labels = []
         if pred_result_path.exists():
