@@ -1,0 +1,16 @@
+services:
+  frontend:
+    build: .
+    ports:
+      - 8082
+
+
+  mongo:
+    image: mongo
+    ports:
+      - 27017
+
+  yolo5:
+    ...
+    
+      
