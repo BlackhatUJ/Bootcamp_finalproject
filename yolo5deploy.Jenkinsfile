@@ -6,7 +6,7 @@ pipeline {
             steps {
                 
                 sh '''
-                aws eks --region us-west-1 update-kubeconfig --name k8s-batch1
+                aws eks --region us-east-2 update-kubeconfig --name k8s-batch1
                 kubectl config set-context --current --namespace=ujjwal
                 kubectl apply -f Yolo5.yaml
                 '''
