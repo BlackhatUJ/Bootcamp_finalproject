@@ -15,7 +15,7 @@ pipeline {
                     docker push 854171615125.dkr.ecr.us-west-1.amazonaws.com/ujjwal_repo:${BUILD_NUMBER}
                 '''
                 }
-            }
+            }  
         /*stage('Trigger Deploy') {
             steps {
                 build job: 'Yolo5Deploy', wait: false, parameters: [
