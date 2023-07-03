@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: yolo5
-        image: 854171615125.dkr.ecr.us-west-1.amazonaws.com/ujjwal_repo
+        image: 854171615125.dkr.ecr.us-west-1.amazonaws.com/ujjwal_repo:4
         ports:
         - containerPort: 8082
 
