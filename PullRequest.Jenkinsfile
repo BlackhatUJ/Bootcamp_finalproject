@@ -7,14 +7,14 @@ pipeline {
                 echo "testing"
             }
         }
-         stage('Install dependencies') {
+        stage('Install dependencies') {
             steps {
                 sh '''
                 pip install -r yolo5/requirements.txt
                 '''
             }
         }
-         stage('Yolo5 - Unittest') {
+        stage('Yolo5 - Unittest') {
             steps {
                 sh '''
                 cd yolo5
