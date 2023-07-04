@@ -10,6 +10,7 @@ import boto3
 import logging
 from botocore.exceptions import ClientError
 import json
+import pytest 
 
 s3_client = boto3.client("s3")
 
@@ -92,7 +93,7 @@ def upload_file_api():
 
     return f'Bad file format, allowed files are {ALLOWED_EXTENSIONS}', 400
    
-   
+
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8081, debug=True)
