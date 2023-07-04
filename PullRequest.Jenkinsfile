@@ -20,7 +20,7 @@ pipeline {
                 cd yolo5
                 python3 -m pytest --junitxml results.xml tests
                 '''
-            }
+            } 
         } 
         stage('Lint') {
             steps {
