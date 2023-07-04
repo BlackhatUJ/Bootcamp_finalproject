@@ -21,7 +21,7 @@ pipeline {
                 python3 -m pytest --junitxml results.xml tests
                 '''
             }
-        }
+        } 
         stage('Lint') {
             steps {
                 echo "linting"
