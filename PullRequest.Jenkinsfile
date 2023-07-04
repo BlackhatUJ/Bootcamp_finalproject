@@ -10,7 +10,7 @@ pipeline {
          stage('Install dependencies') {
             steps {
                 sh '''
-                pip insatll -r yolo5/requirements.txt
+                pip install -r yolo5/requirements.txt
                 '''
             }
         }
