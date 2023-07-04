@@ -18,7 +18,7 @@ pipeline {
             steps {
                 sh '''
                 cd yolo5
-                python3 -m pytestv--junitxml results.xml tests
+                python3 -m pytest --junitxml results.xml tests
                 '''
             }
         }
