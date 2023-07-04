@@ -91,7 +91,8 @@ def upload_file_api():
         return labels
 
     return f'Bad file format, allowed files are {ALLOWED_EXTENSIONS}', 400
-
+   
+   
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=8081, debug=True)
